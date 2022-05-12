@@ -17,9 +17,9 @@ runs:
   using: "docker"
   image: "docker://snyk/snyk:<%= @variant.downcase %>"
   env:
+    FORCE_COLOR: True
     SNYK_INTEGRATION_NAME: GITHUB_ACTIONS
     SNYK_INTEGRATION_VERSION: <%= @variant.downcase %>
-    FORCE_COLOR: True
   args:
   - snyk
   - ${{ inputs.command }}
